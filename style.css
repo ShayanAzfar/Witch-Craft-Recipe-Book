@@ -19,10 +19,11 @@ body {
 
 .title {
     position: absolute;
-    top: 5px;
-    color: #fff;
+    top: 0px;
+    color: #f7d3b2;
     padding: 10px 15px;
-    border-radius: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     font-size: large;
     background-color: #101010;
 }
@@ -87,7 +88,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     font-size: 11px;
-    background: #fff;
+    background: #f7d3b2;
     transform-origin: left;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -101,7 +102,7 @@ body {
 .page2 {z-index: 4;}
 .page3 {z-index: 3;}
 .page4 {z-index: 2;}
-.page5 {z-index: 1; background: #fff;}
+.page5 {z-index: 1;}
 
 .content h2 {
     margin-bottom: 1rem;
