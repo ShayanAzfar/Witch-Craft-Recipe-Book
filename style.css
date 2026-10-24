@@ -47,6 +47,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 6;
     background-color: #fff;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -57,7 +58,7 @@ body {
 
 .cover img {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -69,34 +70,55 @@ body {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .cover img:nth-child(2) {
     transform: rotateY(180deg);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.card:hover {
-    transform: perspective(2000px) rotateZ(-5deg);
-        box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4), inset 20px 0 50px rgba(0, 0, 0, 0.4);
-
-}
-
-.card:hover .cover {
-    transform: rotateY(-135deg);
-    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
-}
 
 .content {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     padding: 1rem;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 11px;
+    background: #fff;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
+.page1 {z-index: 5;}
+.page2 {z-index: 4;}
+.page3 {z-index: 3;}
+.page4 {z-index: 2;}
+.page5 {z-index: 1; background: #fff;}
 
 .content h2 {
     margin-bottom: 1rem;
 }
+
+.card:hover {
+    transform: perspective(2000px) rotateZ(-5deg);
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4), inset 20px 0 50px rgba(0, 0, 0, 0.4);
+
+}
+
+.cover.flipped {
+    transform: rotateY(-150deg);
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.content.page1.flipped { transform: rotateY(-145deg); }
+.content.page2.flipped { transform: rotateY(-140deg); }
+.content.page3.flipped { transform: rotateY(-135deg); }
+.content.page4.flipped { transform: rotateY(-130deg); }
